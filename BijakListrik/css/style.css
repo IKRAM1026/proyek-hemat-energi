@@ -1,0 +1,266 @@
+/* ==========================================================
+   RESET & VARIABEL WARNA
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #1B4D3E; /* Hijau Tua Elegan */
+    --accent-yellow: #FBC02D;  /* Kuning Cerah CTA */
+    --accent-yellow-hover: #F57F17;
+    --text-dark: #1E293B;      /* Hitam / Abu Gelap */
+    --text-muted: #64748B;     /* Abu-abu Teks */
+    --bg-white: #FFFFFF;       /* Latar Bersih */
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================
+   1. NAVBAR & HEADER (Pemisah + Efek Hover Hidup)
+   ========================================================== */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: var(--bg-white);
+    
+    /* Garis pemisah & bayangan halus antara navbar dan halaman utama */
+    border-bottom: 1px solid #E2E8F0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    
+    /* Agar navbar tetap melayang di atas saat di-scroll */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Styling Logo */
+.logo a {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: transform 0.2s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.02); /* Efek sedikit membesar saat logo di-hover */
+}
+
+.logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Styling Links Navbar & Hover Effects */
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.98rem;
+    padding: 0.4rem 0;
+    position: relative;
+    transition: color 0.25s ease, transform 0.2s ease;
+}
+
+/* Garis Animasi Bawah saat Hover */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; /* Mulai dari 0% */
+    height: 3px;
+    background-color: var(--primary-green);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Efek pergerakan halus */
+}
+
+/* Hover State untuk Menu Aktif/Bisa Diklik */
+.nav-item:not(.disabled):hover {
+    color: var(--primary-green);
+    transform: translateY(-1px); /* Terangkat sedikit ke atas */
+}
+
+.nav-item:not(.disabled):hover::after {
+    width: 100%; /* Garis melebar penuh saat kursor di atasnya */
+}
+
+/* State Halaman Aktif */
+.nav-item.active {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.nav-item.active::after {
+    width: 100%;
+}
+
+/* Menu Disabled */
+.nav-item.disabled {
+    color: #CBD5E1;
+    cursor: not-allowed;
+}
+
+/* ==========================================================
+   2. HERO SECTION (HALAMAN UTAMA)
+   ========================================================== */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 5%;
+    flex: 1;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800; /* Bold Headline */
+    color: var(--primary-green);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+/* Tombol CTA Kuning */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem 2.2rem;
+    border-radius: 50px; /* Bentuk Oval/Bulat */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(251, 192, 45, 0.3);
+}
+
+.btn-cta:hover {
+    background-color: var(--accent-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(251, 192, 45, 0.4);
+}
+
+/* Space Kosong Sisi Kanan */
+.hero-space {
+    flex: 1;
+    min-height: 300px;
+}
+
+/* ==========================================================
+   3. HALAMAN TENTANG (TENTANG.HTML)
+   ========================================================== */
+.content-container {
+    padding: 3rem 5%;
+    flex: 1;
+    max-width: 900px;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.lead-text {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-card, .team-card {
+    background-color: #F8FAFC;
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+}
+
+.about-card h3, .team-card h3 {
+    color: var(--primary-green);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+/* ==========================================================
+   4. FOOTER
+   ========================================================== */
+.footer-container {
+    text-align: center;
+    padding: 1.8rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid #F1F5F9;
+}
+
+/* ==========================================================
+   RESPONSIF (TAMPILAN HP / TABLET)
+   ========================================================== */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        padding: 2rem 5%;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-space {
+        display: none; /* Sembunyikan space kosong di layar HP */
+    }
+}

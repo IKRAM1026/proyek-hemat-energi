@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Fakta - BijakListrik</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo BijakListrik" class="logo-img">
+                <span>BijakListrik</span>
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Beranda</a>
+            <a href="tentang.html" class="nav-item">Tentang</a>
+            <a href="data.html" class="nav-item active">Data & Fakta</a>
+            <a href="aksi.html" class="nav-item">Aksi</a>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA DATA & FAKTA -->
+    <main class="data-container">
+        <section class="data-header">
+            <h2>Fakta Perilaku Energi Siswa Kelas XI</h2>
+            <p class="lead-text">
+                Data hasil survei terhadap <strong>636 siswa kelas XI</strong>[cite: 17] menunjukkan kebiasaan kita sudah cukup baik, namun masih ada celah pemborosan energi yang sering tidak disadari.
+            </p>
+        </section>
+
+        <!-- RINGKASAN ANGKA UTAMA -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total Responden</span>
+                <h3 class="stat-number" id="stat-responden">-</h3>
+                <span class="stat-desc">Partisipasi 99,4% siswa kelas XI[cite: 17]</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Rata-rata Skor Perilaku</span>
+                <h3 class="stat-number" id="stat-skor">-</h3>
+                <span class="stat-desc">Dari skala maksimal 4,00[cite: 17]</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Kebiasaan Paling Lemah</span>
+                <h3 class="stat-number highlight-amber">3,22</h3>
+                <span class="stat-desc">Batasi laptop/gawai & menegur teman[cite: 17]</span>
+            </div>
+        </section>
+
+        <!-- GRAFIK BARIS 1: KATEGORI UMUM & PERBANDINGAN JURUSAN -->
+        <section class="charts-row-two">
+            <div class="chart-card">
+                <h3>Sebaran Kategori Perilaku Siswa</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartKategori"></canvas>
+                </div>
+                <p class="chart-caption">
+                    Sebanyak <strong>96,2% siswa</strong> sudah berada di kategori Baik dan Sangat Baik[cite: 17], namun konsistensi pada kebiasaan kecil tetap perlu ditingkatkan.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <h3>Rata-rata Skor per Jurusan</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartJurusan"></canvas>
+                </div>
+                <p class="chart-caption">
+                    Jurusan <strong>PMN</strong> mencatat skor tertinggi (3,51), sementara <strong>PPLG</strong> berada di posisi terendah (3,24)[cite: 17] karena tingginya intensitas pemakaian laptop dan ruang lab.
+                </p>
+            </div>
+        </section>
+
+        <!-- GRAFIK BARIS 2: DETAIL 10 KEBIASAAN -->
+        <section class="chart-card full-width">
+            <h3>Skor 10 Kebiasaan Hemat Energi (Skala 1–4)</h3>
+            <div class="chart-wrapper-tall">
+                <canvas id="chartButir"></canvas>
+            </div>
+            <p class="chart-caption">
+                Kesadaran umum hemat energi (<strong>P01</strong>: 3,51) sudah tinggi[cite: 17], tetapi <strong>membatasi penggunaan gawai/laptop (P04)</strong> dan <strong>keberanian menegur teman (P09)</strong>[cite: 17] menjadi dua titik paling lemah yang harus kita perbaiki bersama.
+            </p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-container">
+        <p>&copy; 2026 BijakListrik - Proyek Konservasi Energi Sekolah</p>
+    </footer>
+
+    <!-- 1. Library Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 2. Data Kuesioner dari Guru -->
+    <script src="js/data-perilaku-energi.js"></script>
+    <!-- 3. Script Render Grafik -->
+    <script src="js/chart-energi.js"></script>
+    <!-- 4. Script Interaksi Navbar -->
+    <script src="js/main.js"></script>
+</body>
+</html>

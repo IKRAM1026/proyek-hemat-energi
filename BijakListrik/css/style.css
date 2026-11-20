@@ -8,12 +8,12 @@
 }
 
 :root {
-    --primary-green: #1B4D3E; /* Hijau Tua Elegan */
-    --accent-yellow: #FBC02D;  /* Kuning Cerah CTA */
+    --primary-green: #1B4D3E;
+    --accent-yellow: #FBC02D;
     --accent-yellow-hover: #F57F17;
-    --text-dark: #1E293B;      /* Hitam / Abu Gelap */
-    --text-muted: #64748B;     /* Abu-abu Teks */
-    --bg-white: #FFFFFF;       /* Latar Bersih */
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --bg-white: #FFFFFF;
     --font-main: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 /* ==========================================================
-   1. NAVBAR & HEADER (Pemisah + Efek Hover Hidup)
+   1. NAVBAR & HEADER
    ========================================================== */
 .navbar-container {
     display: flex;
@@ -36,18 +36,13 @@ body {
     align-items: center;
     padding: 1.2rem 5%;
     background-color: var(--bg-white);
-    
-    /* Garis pemisah & bayangan halus antara navbar dan halaman utama */
     border-bottom: 1px solid #E2E8F0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    
-    /* Agar navbar tetap melayang di atas saat di-scroll */
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-/* Styling Logo */
 .logo a {
     font-size: 1.4rem;
     font-weight: 800;
@@ -60,7 +55,7 @@ body {
 }
 
 .logo a:hover {
-    transform: scale(1.02); /* Efek sedikit membesar saat logo di-hover */
+    transform: scale(1.02);
 }
 
 .logo-img {
@@ -70,7 +65,6 @@ body {
     border-radius: 6px;
 }
 
-/* Styling Links Navbar & Hover Effects */
 .nav-links {
     display: flex;
     gap: 2.2rem;
@@ -87,30 +81,27 @@ body {
     transition: color 0.25s ease, transform 0.2s ease;
 }
 
-/* Garis Animasi Bawah saat Hover */
 .nav-item::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0%; /* Mulai dari 0% */
+    width: 0%;
     height: 3px;
     background-color: var(--primary-green);
     border-radius: 2px;
-    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Efek pergerakan halus */
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Hover State untuk Menu Aktif/Bisa Diklik */
 .nav-item:not(.disabled):hover {
     color: var(--primary-green);
-    transform: translateY(-1px); /* Terangkat sedikit ke atas */
+    transform: translateY(-1px);
 }
 
 .nav-item:not(.disabled):hover::after {
-    width: 100%; /* Garis melebar penuh saat kursor di atasnya */
+    width: 100%;
 }
 
-/* State Halaman Aktif */
 .nav-item.active {
     color: var(--primary-green);
     font-weight: 700;
@@ -120,14 +111,13 @@ body {
     width: 100%;
 }
 
-/* Menu Disabled */
 .nav-item.disabled {
     color: #CBD5E1;
     cursor: not-allowed;
 }
 
 /* ==========================================================
-   2. HERO SECTION (HALAMAN UTAMA)
+   2. HERO SECTION (INDEX.HTML)
    ========================================================== */
 .hero-container {
     display: flex;
@@ -143,7 +133,7 @@ body {
 
 .hero-title {
     font-size: 3.2rem;
-    font-weight: 800; /* Bold Headline */
+    font-weight: 800;
     color: var(--primary-green);
     line-height: 1.15;
     margin-bottom: 1.2rem;
@@ -157,7 +147,6 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Tombol CTA Kuning */
 .btn-cta {
     display: inline-block;
     background-color: var(--accent-yellow);
@@ -165,7 +154,7 @@ body {
     font-weight: 700;
     font-size: 1rem;
     padding: 0.85rem 2.2rem;
-    border-radius: 50px; /* Bentuk Oval/Bulat */
+    border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(251, 192, 45, 0.3);
@@ -177,7 +166,6 @@ body {
     box-shadow: 0 6px 16px rgba(251, 192, 45, 0.4);
 }
 
-/* Space Kosong Sisi Kanan */
 .hero-space {
     flex: 1;
     min-height: 300px;
@@ -200,34 +188,139 @@ body {
 }
 
 .lead-text {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.2rem;
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.about-card, .team-card {
+.about-card,
+.team-card {
     background-color: #F8FAFC;
     padding: 1.8rem;
     border-radius: 12px;
     border: 1px solid #E2E8F0;
 }
 
-.about-card h3, .team-card h3 {
+.about-card h3,
+.team-card h3 {
     color: var(--primary-green);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.6rem;
 }
 
 /* ==========================================================
-   4. FOOTER
+   4. HALAMAN DATA & FAKTA (DATA.HTML)
+   ========================================================== */
+.data-container {
+    padding: 3rem 5%;
+    flex: 1;
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.data-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-green);
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin: 0.3rem 0;
+}
+
+.stat-number.highlight-amber {
+    color: #D97706;
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.charts-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-card {
+    background-color: var(--bg-white);
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+}
+
+.chart-card.full-width {
+    margin-bottom: 2rem;
+}
+
+.chart-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 270px;
+    width: 100%;
+}
+
+.chart-wrapper-tall {
+    position: relative;
+    height: 360px;
+    width: 100%;
+}
+
+.chart-caption {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #F1F5F9;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+/* ==========================================================
+   5. FOOTER
    ========================================================== */
 .footer-container {
     text-align: center;
@@ -238,13 +331,512 @@ body {
 }
 
 /* ==========================================================
-   RESPONSIF (TAMPILAN HP / TABLET)
+   6. FASE 3: AKSI & REKOMENDASI KOMPONEN
+   ========================================================== */
+.action-container {
+    padding: 3.5rem 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.action-hero {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.badge-tag {
+    display: inline-block;
+    background-color: rgba(27, 77, 62, 0.08);
+    color: var(--primary-green);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: 1px solid rgba(27, 77, 62, 0.15);
+}
+
+.action-hero h2 {
+    font-size: 2.35rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 1.1rem;
+    line-height: 1.25;
+}
+
+.section-title-wrap {
+    text-align: center;
+    margin-bottom: 2.8rem;
+}
+
+.section-subheading {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-yellow-hover);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.35rem;
+}
+
+.section-title-wrap h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 0.6rem;
+}
+
+.section-title-wrap p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Grid 4 Kartu Rekomendasi Bersih & Tertata */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 4.5rem;
+}
+
+.recom-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 1.9rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.recom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(27, 77, 62, 0.08);
+    border-color: var(--primary-green);
+}
+
+.recom-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.recom-badge {
+    background-color: #FEF9C3;
+    color: #854D0E;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #FDE047;
+}
+
+.recom-index {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #CBD5E1;
+    font-family: var(--font-main);
+}
+
+.recom-card h4 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.85rem;
+    line-height: 1.35;
+}
+
+.recom-problem {
+    font-size: 0.88rem;
+    color: #475569;
+    background: #F8FAFC;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    border-left: 3px solid var(--accent-yellow);
+    line-height: 1.5;
+}
+
+.problem-tag {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.recom-problem p {
+    margin: 0;
+}
+
+.recom-solution h5 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.6rem;
+}
+
+.recom-solution ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.4rem;
+}
+
+.recom-solution ul li {
+    font-size: 0.88rem;
+    color: #334155;
+    position: relative;
+    padding-left: 1.35rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.5;
+}
+
+.recom-solution ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.recom-footer {
+    border-top: 1px solid #F1F5F9;
+    padding-top: 0.9rem;
+    margin-top: auto;
+}
+
+.recom-callout {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    display: block;
+    line-height: 1.4;
+}
+
+/* Fitur Interaktif Tantangan Harian */
+.challenge-section {
+    margin-bottom: 4.5rem;
+}
+
+.challenge-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-top: 4px solid var(--primary-green);
+    border-radius: 14px;
+    padding: 2.4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.challenge-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+}
+
+.challenge-header-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.challenge-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.challenge-top h3 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin-bottom: 0.4rem;
+}
+
+.challenge-top p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    max-width: 650px;
+}
+
+.btn-reset {
+    background: #FFFFFF;
+    color: #475569;
+    border: 1px solid #CBD5E1;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.btn-reset:hover {
+    background: #F8FAFC;
+    color: #0F172A;
+    border-color: #94A3B8;
+}
+
+/* Progress Bar Tertata */
+.progress-container {
+    background: #F8FAFC;
+    padding: 1.2rem 1.4rem;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    margin-bottom: 1.8rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.6rem;
+}
+
+.progress-count-text {
+    color: var(--primary-green);
+}
+
+.progress-percent-text {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background-color: #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Badge Selesai Elegan & Bebas Emoji */
+.challenge-badge {
+    display: none;
+    background: #F0FDF4;
+    border: 1px solid #86EFAC;
+    color: #14532D;
+    padding: 1.2rem 1.4rem;
+    border-radius: 10px;
+    margin-bottom: 1.8rem;
+    align-items: center;
+    gap: 1.1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.challenge-badge.show {
+    display: flex;
+}
+
+.badge-indicator {
+    width: 38px;
+    height: 38px;
+    background: var(--primary-green);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-check-icon {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.badge-content strong {
+    display: block;
+    font-size: 0.98rem;
+    margin-bottom: 0.2rem;
+    color: #14532D;
+}
+
+.badge-content p {
+    font-size: 0.88rem;
+    margin: 0;
+    color: #166534;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Checklist Items */
+.checklist-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.challenge-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 1.1rem 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.challenge-item:hover {
+    border-color: var(--primary-green);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.challenge-item.completed {
+    background-color: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+.challenge-item.completed .challenge-title {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.challenge-checkbox {
+    width: 19px;
+    height: 19px;
+    accent-color: var(--primary-green);
+    cursor: pointer;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.challenge-item-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-title {
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+    transition: color 0.2s ease;
+}
+
+.challenge-desc {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+/* Call to Action Banner */
+.pledge-banner {
+    background: var(--primary-green);
+    color: #FFFFFF;
+    border-radius: 16px;
+    padding: 3.2rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(27, 77, 62, 0.16);
+}
+
+.pledge-banner h3 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.pledge-banner p {
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    max-width: 680px;
+    margin: 0 auto 2.2rem auto;
+    line-height: 1.6;
+}
+
+.pledge-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary-action {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: #1E293B;
+    font-weight: 700;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-primary-action:hover {
+    background-color: var(--accent-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 127, 23, 0.3);
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    font-weight: 700;
+    padding: 0.85rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   7. RESPONSIF (HP / TABLET)
    ========================================================== */
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
     }
 
     .hero-container {
@@ -256,11 +848,46 @@ body {
         font-size: 2.3rem;
     }
 
-    .about-grid {
+    .hero-space {
+        display: none;
+    }
+
+    .about-grid,
+    .stats-grid,
+    .charts-row-two,
+    .recommendations-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-space {
-        display: none; /* Sembunyikan space kosong di layar HP */
+    .action-container {
+        padding: 2rem 5%;
+    }
+
+    .action-hero h2 {
+        font-size: 1.85rem;
+    }
+
+    .challenge-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pledge-banner {
+        padding: 2rem 1.2rem;
+    }
+
+    .pledge-banner h3 {
+        font-size: 1.5rem;
+    }
+
+    .pledge-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary-action, .btn-outline {
+        width: 100%;
+        text-align: center;
     }
 }
+
